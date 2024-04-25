@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Delete Book - {{ book.title }}
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-semibold mb-4">Delete Book</h1>
+    <p class="text-gray-800 mb-6">Are you sure you want to delete "{{ book.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300 ease-in-out">
+            Delete
+        </button>
+    </form>
+</div>
+{% endblock %}
+
